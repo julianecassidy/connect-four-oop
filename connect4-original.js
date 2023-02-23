@@ -5,54 +5,6 @@
  * board fills (tie)
  */
 
-class Game {
-
-  constructor(y = 6, x = 7) {
-    this.height = y;
-    this.width = x;
-    // this.currPlayer = 1; //  TODO: come back to this; it might not work
-    this.board = [];
-  }
-
-    makeBoard() {  // TODO: is this the best way to do this?
-        for (let y = 0; y < this.height; y++) {
-          board.push(Array.from({ length: this.width }));
-        }
-    }
-
-    makeHtmlBoard() {
-      const board = document.getElementById('board');
-    
-      // make column tops (clickable area for adding a piece to that column)
-      const top = document.createElement('tr');
-      top.setAttribute('id', 'column-top');
-      top.addEventListener('click', handleClick);
-    
-      for (let x = 0; x < WIDTH; x++) {
-        const headCell = document.createElement('td');
-        headCell.setAttribute('id', x);
-        top.append(headCell);
-      }
-    
-      board.append(top);
-    
-      // make main part of board
-      for (let y = 0; y < HEIGHT; y++) {
-        const row = document.createElement('tr');
-    
-        for (let x = 0; x < WIDTH; x++) {
-          const cell = document.createElement('td');
-          cell.setAttribute('id', `c-${y}-${x}`);
-          row.append(cell);
-        }
-    
-        board.append(row);
-      }
-    }  
-
-}
-
-
 const WIDTH = 7;
 const HEIGHT = 6;
 
